@@ -19,7 +19,6 @@ const initialState: IPostInitialState = {
 export const postReducer = (state: IPostInitialState = initialState, action: Action): IPostInitialState => {
     switch (action.type) {
         case PostActionEnum.GET_POSTS_SUCCESS:
-            console.log(action, state)
             return {
                 ...state,
                 posts: action.payload.posts
