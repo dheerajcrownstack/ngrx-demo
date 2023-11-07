@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { SharedModule } from './shared/shared.module';
-import { AppStore } from './store';
+import { AppReducer } from './store';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { AppStore } from './store';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    StoreModule.forRoot(AppStore)
+    StoreModule.forRoot(AppReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

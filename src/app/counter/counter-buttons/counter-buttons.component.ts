@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IAppStore } from 'src/app/store';
-import { decrement, increment, reset } from 'src/app/store/actions/counter.action';
+import { IAppState } from 'src/app/store';
+import { DecrementCounter, IncrementCounter, ResetCounter } from 'src/app/store/counter/counter.action';
 
 @Component({
   selector: 'app-counter-buttons',
@@ -10,19 +10,19 @@ import { decrement, increment, reset } from 'src/app/store/actions/counter.actio
 })
 export class CounterButtonsComponent {
   constructor(
-    private store: Store<IAppStore>
+    private store: Store<IAppState>
   ) {}
 
   onClickButton(buttonType: string) {
     switch (buttonType) {
       case 'increment':
-        this.store.dispatch(increment());
+        this.store.dispatch(new IncrementCounter());
         break;
       case 'decrement':
-        this.store.dispatch(decrement());
+        this.store.dispatch(new DecrementCounter());
         break;
       case 'reset':
-        this.store.dispatch(reset());
+        this.store.dispatch(new ResetCounter());
         break;
       default:
         break;

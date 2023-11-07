@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IPost } from 'src/app/@types';
-import { IAppStore } from 'src/app/store';
-import { postList } from 'src/app/store/actions/post.action';
-import { getPost } from 'src/app/store/selector/post.selector';
+import { IAppState } from 'src/app/store';
+import { getPosts } from 'src/app/store/post/post.selector';
 
 @Component({
   selector: 'app-list',
@@ -15,9 +14,9 @@ export class ListComponent {
   postList: IPost[] = [];
 
   constructor(
-    private store: Store<IAppStore>
+    private store: Store<IAppState>
   ) {
-    this.store.select(getPost).subscribe((res) => {
+    this.store.select(getPosts).subscribe((res) => {
       this.postList = res;
     })
   }

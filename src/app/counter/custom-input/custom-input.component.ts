@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ICounterInitialState } from 'src/app/@types';
-import { changeTitle, counterValue } from 'src/app/store/actions/counter.action';
+import { ChangeTitle, SetCounterValue } from 'src/app/store/counter/counter.action';
 
 @Component({
   selector: 'app-custom-input',
@@ -15,10 +15,10 @@ export class CustomInputComponent {
   ) {}
 
   submit() {
-    this.store.dispatch(counterValue({value: this.customValue}))
+    this.store.dispatch(new SetCounterValue({value: this.customValue}))
   }
 
   changeTitle() {
-    this.store.dispatch(changeTitle({title: 'Learning Ngrx'}));
+    this.store.dispatch(new ChangeTitle({title: 'Learning Ngrx'}));
   }
 }

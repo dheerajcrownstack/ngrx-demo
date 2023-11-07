@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { IAppStore } from 'src/app/store';
 
 @Component({
   selector: 'app-add',
@@ -13,7 +12,7 @@ export class AddComponent {
 
   constructor(
     private fb: FormBuilder,
-    private store: Store<IAppStore>
+    private store: Store<any>
   ) {
     this.form = this.fb.group({
       title: new FormControl('', [Validators.required]),

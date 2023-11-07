@@ -1,13 +1,14 @@
+import {ActionReducerMap} from "@ngrx/store";
 import { ICounterInitialState, IPostInitialState } from "../@types";
-import { CounterReducer } from "./reducer/counter.reducer";
-import { PostReducer } from "./reducer/post.reducer";
+import { counterReducer } from "./counter/counter.reducer";
+import { postReducer } from "./post/post.reducer";
 
-export interface IAppStore {
+export interface IAppState {
     counterState: ICounterInitialState,
     postState: IPostInitialState
 }
 
-export const AppStore = {
-    counterState: CounterReducer,
-    postState: PostReducer
+export const AppReducer: ActionReducerMap<IAppState> = {
+    counterState: counterReducer,
+    postState: postReducer
 }
