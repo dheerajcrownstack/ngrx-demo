@@ -1,5 +1,5 @@
 import { IPostInitialState, Action } from "src/app/@types";
-import { PostEnum } from "./post.action";
+import { PostActionEnum } from "./post.action";
 
 const initialState: IPostInitialState = {
     posts: [
@@ -18,11 +18,13 @@ const initialState: IPostInitialState = {
 
 export const postReducer = (state: IPostInitialState = initialState, action: Action): IPostInitialState => {
     switch (action.type) {
-        case PostEnum.GET_POSTS:
+        case PostActionEnum.GET_POSTS_SUCCESS:
+            console.log(action, state)
             return {
-                ...state
+                ...state,
+                posts: action.payload.posts
             }
-        case PostEnum.ADD_POST:
+        case PostActionEnum.ADD_POST:
             return {
                 ...state
             }

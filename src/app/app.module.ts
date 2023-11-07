@@ -4,7 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { SharedModule } from './shared/shared.module';
-import { AppReducer } from './store';
+import { AppEffects, AppReducer } from './store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppReducer } from './store';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    StoreModule.forRoot(AppReducer)
+    StoreModule.forRoot(AppReducer),
+    EffectsModule.forRoot(AppEffects)
   ],
   providers: [],
   bootstrap: [AppComponent]
