@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <div>
+        <label for="">Title</label>
+        <input type="text" placeholder="Title" formControlName="title">
+    </div>
+    <div>
+        <label for="">Description</label>
+        <input type="text" placeholder="Description" formControlName="description">
+    </div>
+    <button (click)="addPost()">Add</button>
+</form>

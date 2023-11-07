@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AddComponent } from './add/add.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'list',
     component: ListComponent
+  },
+  {
+    path: 'post',
+    component: AddComponent
   }
 ]
 

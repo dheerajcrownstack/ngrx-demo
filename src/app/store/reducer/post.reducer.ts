@@ -1,5 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { IPostInitialState } from "../../@types";
+import { postAdd, postDelete, postList } from "../actions/post.action";
 
 const initialState: IPostInitialState = {
     posts: [
@@ -18,6 +19,21 @@ const initialState: IPostInitialState = {
 
 const _PostReducer = createReducer(
     initialState,
+    on(postList, (state) => {
+        return {
+            ...state
+        }
+    }),
+    on(postAdd, (state, action) => {
+        return {
+            ...state
+        }
+    }),
+    on(postDelete, (state) => {
+        return {
+            ...state
+        }
+    })
 )
 
 export const PostReducer = (state: any, action: any) => {

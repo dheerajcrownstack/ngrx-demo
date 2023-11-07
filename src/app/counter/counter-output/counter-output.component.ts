@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ICounterInitialState } from 'src/app/@types';
+import { IAppStore } from 'src/app/store';
 import { getCounter, getTitle } from 'src/app/store/selector/counter.selector';
 
 @Component({
@@ -12,7 +12,7 @@ export class CounterOutputComponent {
   output: number = 0;
   title: string = '';
   constructor(
-    private store: Store<{counterState: ICounterInitialState}>
+    private store: Store<IAppStore>
   ) {
     this.store.select(getCounter).subscribe(data => this.output = data);
     this.store.select(getTitle).subscribe(data => this.title = data);

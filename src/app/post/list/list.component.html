@@ -1,1 +1,24 @@
-<p>list works!</p>
+<app-add></app-add>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of postList">
+            <td>
+                {{item.id}}
+            </td>
+            <td>
+                {{item.title}}
+            </td>
+            <td>
+                {{item.description}}
+            </td>
+        </tr>
+    </tbody>
+</table>
